@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 300px; margin: 0; padding: 12px 14px;
+         font: 13px/1.7 Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; color: #333; }
+  h3 { margin: 0 0 10px; font-size: 14px; color: #2b6a4a; }
+  .row { margin: 8px 0; }
+  label { display: block; color: #666; }
+  input[type=text] { width: 140px; padding: 3px 6px; border: 1px solid #ccc; border-radius: 3px; font: inherit; }
+  button { padding: 4px 12px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
+           font: inherit; cursor: pointer; }
+  button:hover { background: #f0f0f0; }
+  .status { margin: 10px 0; padding: 8px 10px; background: #f7f7f4; border-radius: 4px;
+            font-size: 12px; color: #555; white-space: pre-line; }
+  .tip { margin-top: 10px; font-size: 12px; color: #999; }
+  .btns { display: flex; gap: 8px; }
+</style>
+</head>
+<body>
+  <h3>豆瓣排除动画剧集</h3>
+
+  <div class="row">
+    <label>豆瓣数字 ID（留空 = 自动识别）</label>
+    <input type="text" id="uid" placeholder="例如 171904884">
+  </div>
+
+  <div class="row">
+    <label><input type="checkbox" id="tvonly"> 只扫描剧集（更快，但不显示动画电影数量）</label>
+  </div>
+
+  <div class="btns">
+    <button id="save">保存</button>
+    <button id="clear">清除缓存</button>
+    <button id="open">打开看过页</button>
+  </div>
+
+  <div class="status" id="status">读取中…</div>
+
+  <div class="tip">装好后打开 movie.douban.com 的「看过」页，页面顶部会出现统计条；默认会翻剧集 + 电影列表来统计动画电影数量（每 30 条一页，0.8 秒一页），之后缓存 7 天。</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
